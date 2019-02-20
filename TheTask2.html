@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html>
+
+  <head>
+    <title>The task 2</title>
+  </head>
+
+  <body>
+  
+    <input id="quantity">
+	<input id="send" type="button" value="Отправить">
+	
+	<canvas id="canvasForRectangles" width="1900" height="1100">
+	
+	<script>
+	  function displayRectangles() {
+	    var quantity = document.getElementById("quantity").value;
+	    var canvas = document.getElementById("canvasForRectangles"); 
+	    var context = canvas.getContext("2d");
+	    var x, y, xIndent = 10, yIndent = 10, width = 50, height = 25;
+	    if (quantity <= 30) {
+		  context.clearRect(0, 0, canvas.width, canvas.height);
+		  for (var i = 0; i < quantity; i++) {
+		    y = yIndent + height * i + yIndent * i;
+			for (var j = 0; j < quantity; j++) {
+			  x = xIndent + width * j + xIndent * j;
+			  context.beginPath();
+			  context.fillStyle = "#" + parseInt(Math.random() * 0xffffff).toString(16);
+			  context.fillRect(x, y, width, height);
+			  context.closePath();
+			  context.stroke();
+			}		
+		  }
+		}
+	  }
+	  document.getElementById("send").addEventListener("click", displayRectangles);
+	</script>
+  </body>
+
+</html>

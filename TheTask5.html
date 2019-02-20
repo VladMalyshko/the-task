@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+
+  <head>
+	<title>The task 5</title>
+  </head>
+
+  <body>
+
+    <script>
+      function getLowerestIndex(array, number) {
+	    array.push(number);
+	    array.sort();
+	    var lowerestIndex = 0;
+	    for (var i = 0; i < array.length; i++) {
+	      if (array[i] === number) {
+	  	    lowerestIndex = i;
+		    break;
+		  }
+	    }
+	    console.log(lowerestIndex);
+      }
+      getLowerestIndex([1,2,3,4], 1.5);
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html>
+
+  <head>
+    <title>The task 3</title>
+  </head>
+
+  <body>
+
+    <input id="words" style="width: 1000px;">
+    <input id="say" type="button" value="Отправить">
+
+    <div id="result"></div>
+
+    <script>
+	  function wordLengthDefinition() {
+	    var words = document.getElementById("words").value;
+	    words = words.split(" ");
+	    var shortWord = words[0].length;	
+	    for (var i = 0; i < words.length; i++) {
+		  if (shortWord > words[i].length) {
+		    shortWord = words[i].length;
+		  }
+	    }
+	    result = "The shortest length of the word: " + shortWord;
+	    document.getElementById("result").innerHTML = result;
+      }
+      document.getElementById("say").addEventListener("click", wordLengthDefinition);
+    </script>
+
+  </body>
+
+</html>

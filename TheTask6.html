@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html>
+
+  <head>
+	<title>The task 6</title>
+  </head>
+
+  <body>
+
+    <script>
+	  function frame(array, symbol) {
+	    var sizeLongestWord = array[0].length;
+	    var i;
+	    for (i = 0; i < array.length; i++) {
+		  if (sizeLongestWord < array[i].length) sizeLongestWord = array[i].length;
+	    }
+	    var result = "";
+	    var wordLengthDifference = 0;
+	    for (i = 0; i < array.length; i++) {
+		  wordLengthDifference = sizeLongestWord - array[i].length;
+		  result = result + "\n" + symbol + " " + array[i] + " ".repeat(wordLengthDifference + 1) + symbol;
+	    }
+	    result = symbol.repeat(sizeLongestWord + 4) + result + "\n" + symbol.repeat(sizeLongestWord + 4);
+	    console.log(result);
+      }
+      frame(["Create", "a", "frame"], "+");
+    </script>
+
+  </body>
+
+</html>

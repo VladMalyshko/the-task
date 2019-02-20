@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>The task 1</title>
+  </head>
+
+  <body>
+  
+    <input id="quantity">
+	<input id="say" type="button" value="Отправить">
+
+	<script>
+	  function getString() {
+	    var quantity = document.getElementById("quantity").value;
+	    var resault = "";
+	    for (var i = 1; i <= quantity; i++) {
+		  resault = resault + i + " sheep...";
+	    }
+		var newDiv = document.createElement("div");
+		newDiv.innerHTML = resault;
+		document.body.insertBefore(newDiv, newDiv.nextSibling);
+	  }
+	  document.getElementById("say").addEventListener("click", getString);
+	</script>
+
+  </body>
+
+</html>

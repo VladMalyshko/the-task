@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+
+  <head>
+	<title>The task 7</title>
+  </head>
+
+  <body>
+
+    <script>
+	  function  createHolder(argument) {
+	    this.argument = argument;
+	  }
+	  createHolder.prototype.getValue = function() {
+		console.log(this.argument);
+	  }
+	  createHolder.prototype.setValue = function(newArgument) {
+		this.argument = newArgument;
+	  }
+	  
+	  var obj = new createHolder(5);
+	  obj.getValue();
+	  obj.setValue(2);
+	  obj.getValue();
+    </script>
+
+  </body>
+
+</html>
